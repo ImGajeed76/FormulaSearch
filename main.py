@@ -6,7 +6,7 @@ green = '\033[32m'  # green
 orange = '\033[33m'  # orange
 blue = '\033[34m'  # blue
 purple = '\033[35m'  # purple
-gray = '\033[90m' # gray
+gray = '\033[90m'  # gray
 
 
 def load_formulas(file_path: str):
@@ -35,7 +35,7 @@ def console_app(formula_file: str):
         searched = input("Variable that is searched: ")
         if searched == "":
             continue
-        to_use = input(f"Variables that you have access to {orange}(seperated with a , or leave empty){white}: ")\
+        to_use = input(f"Variables that you have access to {orange}(seperated with a , or leave empty){white}: ") \
             .replace(" ", "")
         if to_use == ",":
             continue
