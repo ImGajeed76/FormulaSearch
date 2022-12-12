@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "formulasearch"
+version = "0.1.0"
+description = ""
+authors = ["ImGajeed76 <74793217+ImGajeed76@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+sympy = "^1.11.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
