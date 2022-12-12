@@ -42,7 +42,14 @@ def console_app(formula_file: str):
         if "," in to_use:
             to_use = to_use.removesuffix(",")
             to_use = to_use.split(",")
-        results = searcher.deep_search(searched, to_use)
+
+        try:
+            results = searcher.deep_search(searched, to_use)
+        except Exception as e:
+            print(f"{red}Error: (probably no solution found)\n > {e}{white}")
+            input()
+            continue
+
         print()
         print("------------------------------------------")
         i = 1
