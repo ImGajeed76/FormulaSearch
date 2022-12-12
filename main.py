@@ -6,6 +6,7 @@ green = '\033[32m'  # green
 orange = '\033[33m'  # orange
 blue = '\033[34m'  # blue
 purple = '\033[35m'  # purple
+gray = '\033[90m' # gray
 
 
 def load_formulas(file_path: str):
@@ -47,7 +48,12 @@ def console_app(formula_file: str):
             results = searcher.deep_search(searched, to_use)
         except Exception as e:
             print(f"{red}Error: (probably no solution found)\n > {e}{white}")
-            input()
+            input(f"{gray}Press enter to continue...{white}")
+            continue
+
+        if len(results) == 0:
+            print(f"{red}No solution found{white}")
+            input(f"{gray}Press enter to continue...{white}")
             continue
 
         print()
@@ -69,7 +75,7 @@ def console_app(formula_file: str):
                 values.update({var: float(input(f"{var} = "))})
             formatted = "{:.3e}".format(float(str(results[index].run_with_values(values))))
             print(f"{red}p = {formatted}{white}")
-            input()
+            input(f"{gray}Press enter to continue...{white}")
 
 
 if __name__ == '__main__':
